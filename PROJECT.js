@@ -194,58 +194,56 @@ function changeAction(){
 
 
 
-function addData() { 
-   var namereg=document.querySelector(" .name").value;
+function addData() {
+  var namereg = document.querySelector(".name").value;
   console.log(namereg);
-  var surname=document.querySelector(" .surname").value;
+  var surname = document.querySelector(".surname").value;
   console.log(surname);
 
-  var emailreg=document.querySelector(" .email").value;
+  var emailreg = document.querySelector(".email").value;
   console.log(emailreg);
-  var passwordreg=document.querySelector(" .pass").value;
+  var passwordreg = document.querySelector(".pass").value;
   console.log(passwordreg);
-  
-    var new_entry = 
-      {name: namereg,
-      surname : surname,
-      email: emailreg,
-      password: passwordreg 
-    };
-  
-   
-    
-      var new_array= JSON.parse(localStorage.getItem("dataArray") || "[]");
-      new_array.push(new_entry);
-      localStorage.setItem("dataArray", JSON.stringify(new_array));
 
-    if  (emailreg=="" || namereg=="" || surname=="" || passwordreg==""){
-      alert("Please fill it out");
-      return  false;
-    }else{
-      
-     
-      for (var j=0; j<new_array.length;j++){
-        console.log(new_array.includes(emailreg));
-        if (emailreg  == new_array[j].email){
-          alert('User already exist');
-          new_array.pop();
-          break;
-          
-        } else if (passwordreg == new_array[j].password){
-            alert('this password already exist');
-           break;
-            
-        }else{ 
-         
-         
-          alert("succesfull register");
-          console.log(new_array);
-          changeAction(); 
-          break;
-       }   
+  var new_entry = {
+    name: namereg,
+    surname: surname,
+    email: emailreg,
+    password: passwordreg,
+  };
+
+  var new_array = JSON.parse(localStorage.getItem("dataArray") || "[]");
+
+  if (emailreg === "" || namereg === "" || surname === "" || passwordreg === "") {
+    alert("Please fill it out");
+    return false;
+  } else {
+    var data_array = JSON.parse(localStorage.getItem("dataArray")) || [];
+
+    // Check if the email already exists
+    var emailExists = data_array.some((user) => user.email === emailreg);
+    if (emailExists) {
+      alert("User already exists with this email");
+      return;
     }
+
+    // Check if the password already exists
+    var passwordExists = data_array.some((user) => user.password === passwordreg);
+    if (passwordExists) {
+      alert("This password already exists");
+      return;
+    }
+
+    // If email and password are unique, add the new entry to the array
+    new_array.push(new_entry);
+    localStorage.setItem("dataArray", JSON.stringify(new_array));
+
+    alert("Successfully registered");
+    console.log(new_array);
+    changeAction();
+    return true;
   }
-};   
+};
 
 
   
