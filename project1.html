@@ -1,67 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
   <meta charset="utf-8">
-  <title>Reservation Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Hotel - Φόρμα Κράτησης</title>
   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
   <link href="style1.css" rel="stylesheet">
-  <div class="container">
-    <h1><b>Reservation Form</b></h1>
-    <form class="form" action="PROJECT.html" method="post">
-      <div class="form-group">
-        <label for="name">Name-Surname:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" required>
-      </div>
-      <div class="form-group">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required>
-      </div>
-      <div class="form-group">
-        <label for="zipcode">Postcode:</label>
-        <input type="text" id="zipcode" name="zipcode" required>
-      </div>
-      <div class="form-group">
-        <label for="country">Country:</label>
-        <input type="text" id="country" name="country" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Telephone:</label>
-        <input type="text" id="phone" name="phone" required>
-      <div class="form-group">
-        <label for="checkin">Check-in:</label>
-        <input type="date" id="checkin" name="checkin" required>
-      </div>
-      <div class="form-group">
-         <label for="checkout">Check-out:</label>
-         <input type="date" id="checkout" name="checkout" required>
-      </div>
-      <div class="form-group">
-        <label for="room-type">Type room:</label>
-        <select id="room-type" name="room-type" required>
-        <option value="">Choose a room type:</option>
-        <option value="single">Single</option>
-        <option value="double">Double</option>
-        <option value="suite">Suite</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="diamoni">Reservation days:</label>
-        <input type="number" id="days" name="days" required>
-      </div>
-      <div class="form-group">
-         <label for="message">Αdditional information:</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-      </div>
-      <div class="form-group">
-        <label>Submit</label>
-        <input type="submit" name="submit" required>
-      </div>
-    </form>
-  </div>
-  
+</head>
+<body>
+    <nav class="menu-bar">
+        <ul class="list">
+            <li class="list-child"><a href="index.html">HOME </a></li>
+            <li class="list-child"><a href="rooms.html">ROOMS</a></li>
+            <li class="list-child"><a href="project1.html">Reservation Form</a></li>
+            <li class="list-child"><a href="about.html">ABOUT US</a></li>
+            <li class="list-child"><a href="contact.html">CONTACT US</a></li>
+        </ul>
+        <button id="btn1" class="nav-btn" onclick="window.location.href='login.html'">LOG IN</button>
+        <button id="btn2" class="nav-btn" onclick="window.location.href='login.html'">Register</button>
+    </nav>
+    <div id="message-modal" class="message-modal hidden"></div>
+
+    <div class="container reservation-form">
+        <h1><b>Φόρμα Κράτησης</b></h1>
+        <form class="form" id="reservationForm">
+            <div class="form-group">
+                <label for="name">Όνομα-Επώνυμο:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Διεύθυνση:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Πόλη:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Ταχυδρομικός Κώδικας:</label>
+                <input type="text" id="zipcode" name="zipcode" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Χώρα:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Τηλέφωνο:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="checkin">Check-in:</label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-group">
+                 <label for="checkout">Check-out:</label>
+                 <input type="date" id="checkout" name="checkout" required>
+            </div>
+            <div class="form-group">
+                <label for="room-type">Τύπος Δωματίου:</label>
+                <select id="room-type" name="room-type" required>
+                <option value="">Επιλέξτε τύπο δωματίου:</option>
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="suite">Suite</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="diamoni">Ημέρες Διαμονής:</label>
+                <input type="number" id="days" name="days" required min="1">
+            </div>
+            <div class="form-group">
+                 <label for="message">Πρόσθετες Πληροφορίες:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <div class="form-group submit-group">
+                <input type="submit" value="Υποβολή Κράτησης">
+            </div>
+        </form>
+    </div>
+    <script type="module" src="PROJECT.js"></script>
 </body>
 </html>
