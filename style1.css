@@ -1,236 +1,355 @@
+@import url("https://fonts.googleapis.com/css?family=Arvo");
+
+/* --- Base Reset & Typography --- */
+* {
+  box-sizing: border-box;
+  font-family: 'Arvo', sans-serif;
+}
 
 body {
-  font-family: Arial, sans-serif;
-  padding: 0; /* Set padding to 0 */
+  margin: 0;
+  padding: 0;
   background: url("https://plus.unsplash.com/premium_photo-1661901543371-0d1279a79645?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1227&q=80") no-repeat center center fixed;
   background-size: cover;
-  background-position:center;
+  min-height: 100vh;
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- Navigation Bar --- */
+.menu-bar {
   display: flex;
-  width:fit-content;
-  margin: 0;
- 
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
- 
-    h1 {
-      text-align: center;
-      color: black;
-      padding-top: 2px;
-      top:2%;
-
-    }
-    
-    .container {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-     
-      position: absolute;
-      margin: -17px 0 0 -25px;
-      top: 5%;
-      left:40%;
-      width:300px;
-      height: 920px;
-    }
-    
-    .form-group {
-      margin-bottom: 9px;
-      padding-right: 10px;
-    }
-    
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-      margin-top: 2%;
-    }
-    
-    input[type="text"],
-    input[type="email"],
-    input[type="date"],
-    select {
-      width: 260px;
-      padding: 8px;
-      border-radius: 7px solid #ccc;
-      
-      margin-bottom: 5px;
-      height: 8px;
-      
-      line-height: 24px;
-    }
-    
-    input[type="submit"] {
-      background-color: #4CAF50;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-
-    }
-    
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-    
-    nav #btn2{
-      display: block;
-      margin-left: 850px;
-      margin-top: 0px;
-      cursor: pointer;
-      margin: -22px 0 0 860px;
-      
-    }
-    nav #btn1{
-      display: inline;
-      cursor: pointer;
-       margin-left: 780px;
-       margin-top: 20px;
-    }
-/*css in PROJECT.html
-*/
-.form-log{
-
-  justify-content:center;
-  
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  opacity: 0.8;
-  display:none;  
-  position: absolute;
-  margin: -25px 0 0 -25px;
-  top: 40%;
-  left:40%;
-  width:320px;
-  height: 300px;
-  
-  
-}
-
-
-.menu-bar ul{
-  
+.menu-bar .list {
   list-style-type: none;
-  margin: 10;
-  padding: 10;
-  position: absolute;
-    
+  padding: 0;
+  margin: 0;
 }
 
-  
-.menu-bar li{
+.menu-bar .list-child {
   display: inline;
+  margin-right: 25px;
 }
 
-
-.menu-bar a{
-  color:black;
-  margin-inline: 5px;
-  font-size: 25px;
-  margin-bottom: 100px;
-  transition: font-size 1s;
-}
-.menu-bar a:hover{
-  font-size: 30px;
+.menu-bar a {
+  color: #333;
+  font-size: 18px;
   text-decoration: none;
+  padding: 5px 0;
+  transition: color 0.3s, border-bottom 0.3s;
 }
-h2{
-  text-align: center;
-  font-size: 25px;
-  padding: 20px;
-  width: fit-content;
-  position: absolute;
-  margin: -25px 0 0 -25px;
-  top: 30%;
-  left:45%;
 
+.menu-bar a:hover {
+  color: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
 }
-   
-/*css style for register.html */
-h3{
-  text-align: center;
-  font-size: 25px;
-  padding: 10px;
-  width: fit-content;
-  position: absolute;
-  margin: -25px 0 0 -25px;
-  top: -10%;
-  left:30%;
-} 
 
-  
+.nav-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #0056b3;
+}
+
+#btn1 { margin-left: auto; } /* Push buttons to the right */
+
+/* --- Hero Section (index.html) --- */
+.hero-section {
+    text-align: center;
+    padding: 150px 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    min-height: calc(100vh - 60px); /* Adjust height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: #eee;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* --- Main Content (All Pages) --- */
+.main-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    width: 90%;
+    line-height: 1.6;
+}
+
+/* --- Rooms Page Specific --- */
+.rooms-page {
+    text-align: center;
+}
+
+.room-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.room-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 250px;
+    transition: transform 0.3s;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.room-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+/* --- Contact Page Specific --- */
+.contact-form .form-group {
+    max-width: 500px;
+    margin: 0 auto 15px;
+}
+.contact-form .submit-button {
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+.map-placeholder {
+    margin-top: 30px;
+}
+
+.map-placeholder iframe {
+    border-radius: 8px;
+}
 
 
-.register-div{
-  display: none;
-  justify-content:center;
-  
+/* --- Reservation Form / General Form Styling --- */
+.container.reservation-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    margin: 40px auto;
+    max-width: 600px;
+    width: 90%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.container.reservation-form input[type="text"],
+.container.reservation-form input[type="number"],
+.container.reservation-form input[type="date"],
+.container.reservation-form input[type="email"],
+.container.reservation-form input[type="password"],
+.container.reservation-form select,
+.container.reservation-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.container.reservation-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.container.reservation-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+/* --- Login/Register Forms (login.html) --- */
+
+.form-container {
   background-color: #fff;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  opacity: 0.8;
-  display:block;  
-  position: absolute;
-  margin: -25px 0 0 -25px;
-  top: 40%;
-  left:40%;
-  width:300px;
-  height: 320px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto;
 }
 
-
-div .name{
-  width: 220px;
-
-  border-radius: 7px solid #ccc;
-  display: inline-block;
-  width: 190px;
-  line-height: 22px;
-  margin-bottom: 15px;
-
+.hidden {
+  display: none !important;
 }
-div 
-input[type="text"],
-input[type="password"],
-input[type="name"],
-input[type="email"] 
-{
-  font-size: 14px;
-  margin-bottom: 10px;
-  width: 240px;
-  line-height: 22px;
-}
-/* forgot password */
 
-div .forgot{
-  justify-content:center;
-  display: none;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  opacity: 0.8;
- 
-  position: absolute;
-  margin: -25px 0 0 -25px;
-  top: 40%;
-  left:40%;
-  width:320px;
-  height: 140px;
-
+.form-container h3, .form-container h2, .form-container h4 {
+    margin: 0 0 20px 0;
+    font-size: 1.8em;
 }
-h4{
-  text-align: center;
-  font-size: 25px;
-  padding: 10px;
-  width: fit-content;
-  position: absolute;
-  margin: -25px 0 0 -25px;
-  top: -10%;
-  left:30%;
-  display:none;
+
+.form-container .submit input[type="submit"], .form-container .submit input[type="button"] {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.form-container .submit input[type="submit"]:hover, .form-container .submit input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+.form-container .forget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.form-container .register b {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* --- Message Modal Styling --- */
+#message-modal {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    min-width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#message-modal.visible {
+    opacity: 1;
+}
+
+#message-modal.info {
+    background-color: #2196F3;
+}
+
+#message-modal.success {
+    background-color: #4CAF50;
+}
+
+#message-modal.error {
+    background-color: #F44336;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .menu-bar {
+        flex-direction: column;
+    }
+    .menu-bar .list {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .menu-bar .list-child {
+        display: block;
+        margin: 5px 0;
+    }
+    #btn1 { margin-left: 0; }
+    .hero-section {
+        padding: 80px 10px;
+    }
+    .hero-section h1 {
+        font-size: 2em;
+    }
+    .room-cards {
+        flex-direction: column;
+    }
+    .room-card {
+        width: 100%;
+    }
 }
