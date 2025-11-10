@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Hotel - Επικοινωνία</title>
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link href="style1.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="menu-bar">
+        <ul class="list">
+            <li class="list-child"><a href="index.html">HOME</a></li>
+            <li class="list-child"><a href="rooms.html">ROOMS</a></li>
+            <li class="list-child"><a href="project1.html">Reservation Form</a></li>
+            <li class="list-child"><a href="about.html">ABOUT US</a></li>
+            <li class="list-child"><a href="contact.html">CONTACT US</a></li>
+        </ul>
+        <button id="btn1" onclick="window.location.href='login.html'">LOG IN</button>
+        <button id="btn2" onclick="window.location.href='login.html'">Register</button>
+    </nav>
+
+    <div class="main-content contact-page">
+        <h2>Επικοινωνήστε Μαζί μας</h2>
+        <div class="contact-info">
+            <p><strong>Διεύθυνση:</strong> Οδός Φιλοξενίας 10, 12345, Αθήνα</p>
+            <p><strong>Τηλέφωνο:</strong> +30 210 555 1234</p>
+            <p><strong>Email:</strong> info@yourhotel.gr</p>
+        </div>
+        
+        <h3>Στείλτε μας μήνυμα</h3>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Όνομα:</label>
+                <input type="text" id="contact-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="contact-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Θέμα:</label>
+                <input type="text" id="contact-subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Μήνυμα:</label>
+                <textarea id="contact-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Αποστολή</button>
+        </form>
+
+        <div class="map-placeholder">
+            <h3>Η Τοποθεσία μας</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1573.1970258104868!2d23.72753634020977!3d37.98380963076135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a5b487e35b75%3A0x247e9545e8e89f92!2sAcropolis!5e0!3m2!1sen!2sgr!4v1620858544000!5m2!1sen!2sgr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</body>
+</html>
