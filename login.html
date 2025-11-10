@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Hotel - Σύνδεση</title>
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link href="style1.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Message Modal/Notification Area -->
+    <div id="message-modal" class="message-modal hidden"></div>
+
+    <nav class="menu-bar">
+      <ul class="list">
+        <li class="list-child"><a href="index.html">HOME </a></li>
+        <li class="list-child"><a href="rooms.html">ROOMS</a></li>
+        <li class="list-child"><a href="project1.html">Reservation Form</a></li>
+        <li class="list-child"><a href="about.html">ABOUT US</a></li>
+        <li class="list-child"><a href="contact.html">CONTACT US</a></li>
+       
+      </ul>
+      <button id="btn1" class="nav-btn"> LOG IN</button>
+      <button id="btn2" class="nav-btn">Register</button>
+    </nav>
+    <div class="main-content form-container-wrapper">
+        <h2>Κάντε Σύνδεση</h2>
+        <div class="form-log form-container">
+            <form class="login" id="loginForm">
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="email" required autocomplete="on">
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Log In">
+                </div>
+                <div class="forget">
+                    <label>
+                        <input type="checkbox">Remember Me!
+                    </label>
+                    <label id="code">
+                        <input type="button" value="Forgot Password"> 
+                    </label>
+                </div>
+                <div class="register">
+                    <b> Δεν έχετε λογαριασμό; Πατήστε το κουμπί Register. </b>
+                </div>
+            </form>
+        </div>
+        
+        <div class="register-div form-container hidden">
+            <form class="register-form" id="registerForm">
+                <h3>Φόρμα Εγγραφής</h3>
+                <div class="form-group">
+                    <label>Όνομα:</label>
+                    <input class="name" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Επώνυμο:</label>
+                    <input class="surname" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input class="email" type="email" required autocomplete="on">
+                </div>
+                <div class="form-group">
+                    <label>Κωδικός:</label>
+                    <input class="pass" type="password" required>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Εγγραφή">
+                </div>
+            </form>
+        </div> 
+
+        <div class="Forgot-form form-container hidden">
+            <form class="forgot" id="forgotForm">
+                <h4>Ανάκτηση Κωδικού</h4>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="mail" required>
+                </div>
+                <div id="forget" class="submit">
+                    <input type="submit" value="Αποστολή κωδικού" >
+                </div>
+            </form>
+        </div> 
+    </div>
+
+    <script type="module" src="PROJECT.js"></script>
+</body>
+</html>
